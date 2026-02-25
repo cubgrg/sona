@@ -1,0 +1,133 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  displayName  String   @map("display_name")
+  avatarUrl    String?  @map("avatar_url")
+  status       String   @default("offline")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  messages       Message[]
+  channelMembers ChannelMember[]
+  conversationMembers ConversationMember[]
+  channelsCreated Channel[] @relation("ChannelCreator")
+  readReceipts   ReadReceipt[]
+  reactions      Reaction[]
+
+  @@map("users")
+}
+
+model Channel {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String?
+  isPrivate   Boolean  @default(false) @map("is_private")
+  createdBy   String   @map("created_by")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  creator  User            @relation("ChannelCreator", fields: [createdBy], references: [id])
+  members  ChannelMember[]
+  messages Message[]
+  readReceipts ReadReceipt[]
+
+  @@map("channels")
+}
+
+model ChannelMember {
+  channelId String   @map("channel_id")
+  userId    String   @map("user_id")
+  role      String   @default("member")
+  joinedAt  DateTime @default(now()) @map("joined_at")
+
+  channel Channel @relation(fields: [channelId], references: [id], onDelete: Cascade)
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([channelId, userId])
+  @@map("channel_members")
+}
+
+model Conversation {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now()) @map("created_at")
+
+  members  ConversationMember[]
+  messages Message[]
+  readReceipts ReadReceipt[]
+
+  @@map("conversations")
+}
+
+model ConversationMember {
+  conversationId String   @map("conversation_id")
+  userId         String   @map("user_id")
+  joinedAt       DateTime @default(now()) @map("joined_at")
+
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([conversationId, userId])
+  @@map("conversation_members")
+}
+
+model Message {
+  id             String    @id @default(uuid())
+  content        String
+  authorId       String    @map("author_id")
+  channelId      String?   @map("channel_id")
+  conversationId String?   @map("conversation_id")
+  threadParentId String?   @map("thread_parent_id")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+  editedAt       DateTime? @map("edited_at")
+
+  author       User          @relation(fields: [authorId], references: [id])
+  channel      Channel?      @relation(fields: [channelId], references: [id], onDelete: Cascade)
+  conversation Conversation? @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  threadParent Message?      @relation("ThreadReplies", fields: [threadParentId], references: [id])
+  threadReplies Message[]    @relation("ThreadReplies")
+  reactions    Reaction[]
+
+  @@map("messages")
+}
+
+model Reaction {
+  id        String   @id @default(uuid())
+  emoji     String
+  userId    String   @map("user_id")
+  messageId String   @map("message_id")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  message Message @relation(fields: [messageId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, messageId, emoji])
+  @@map("reactions")
+}
+
+model ReadReceipt {
+  id               String   @id @default(uuid())
+  userId           String   @map("user_id")
+  channelId        String?  @map("channel_id")
+  conversationId   String?  @map("conversation_id")
+  lastReadMessageId String  @map("last_read_message_id")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  channel      Channel?      @relation(fields: [channelId], references: [id], onDelete: Cascade)
+  conversation Conversation? @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, channelId])
+  @@unique([userId, conversationId])
+  @@map("read_receipts")
+}
