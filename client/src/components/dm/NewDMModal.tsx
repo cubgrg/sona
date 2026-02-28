@@ -37,7 +37,7 @@ export function NewDMModal({ onClose }: Props) {
         socket.emit('conversation:join', conversation.id);
       }
       onClose();
-      navigate(`/dm/${conversation.id}`);
+      navigate(`/messages/dm/${conversation.id}`);
     } catch {
       setIsLoading(false);
     }
@@ -52,7 +52,7 @@ export function NewDMModal({ onClose }: Props) {
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent mb-3"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent mb-3"
           placeholder="Search by name..."
           autoFocus
         />
@@ -68,7 +68,7 @@ export function NewDMModal({ onClose }: Props) {
                 disabled={isLoading}
                 className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50 text-left transition-colors disabled:opacity-50"
               >
-                <div className="w-8 h-8 rounded-full bg-indigo-500 text-white flex items-center justify-center text-xs font-bold shrink-0">
+                <div className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shrink-0">
                   {u.displayName.split(' ').map((w) => w[0]).join('').toUpperCase().slice(0, 2)}
                 </div>
                 <div>

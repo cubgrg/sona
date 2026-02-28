@@ -41,7 +41,7 @@ export function RegisterForm() {
               required
               value={displayName}
               onChange={(e) => setDisplayName(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
               placeholder="Your name"
             />
           </div>
@@ -54,7 +54,7 @@ export function RegisterForm() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
               placeholder="you@team.com"
             />
           </div>
@@ -68,7 +68,7 @@ export function RegisterForm() {
               minLength={8}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
               placeholder="At least 8 characters"
             />
           </div>
@@ -76,7 +76,7 @@ export function RegisterForm() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-2.5 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 disabled:opacity-50 transition-colors"
+            className="w-full py-2.5 bg-emerald-600 text-white font-medium rounded-lg hover:bg-emerald-700 disabled:opacity-50 transition-colors"
           >
             {isLoading ? 'Creating account...' : 'Create account'}
           </button>
@@ -84,7 +84,7 @@ export function RegisterForm() {
 
         <p className="mt-6 text-center text-sm text-gray-500">
           Already have an account?{' '}
-          <Link to="/login" className="text-indigo-600 hover:text-indigo-700 font-medium">
+          <Link to="/login" className="text-emerald-600 hover:text-emerald-700 font-medium">
             Sign in
           </Link>
         </p>

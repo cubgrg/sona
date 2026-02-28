@@ -50,7 +50,7 @@ export function CreateChannelModal({ onClose, onCreated }: Props) {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, '-'))}
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                 placeholder="e.g. design-reviews"
               />
             </div>
@@ -65,7 +65,7 @@ export function CreateChannelModal({ onClose, onCreated }: Props) {
               type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
               placeholder="What's this channel about?"
             />
           </div>
@@ -81,7 +81,7 @@ export function CreateChannelModal({ onClose, onCreated }: Props) {
             <button
               type="submit"
               disabled={isSubmitting || !name}
-              className="px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 disabled:opacity-50 transition-colors"
+              className="px-4 py-2 bg-emerald-600 text-white text-sm font-medium rounded-lg hover:bg-emerald-700 disabled:opacity-50 transition-colors"
             >
               {isSubmitting ? 'Creating...' : 'Create Channel'}
             </button>

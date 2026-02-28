@@ -9,7 +9,11 @@ userRouter.use(authenticate);
 userRouter.get('/me', async (req: Request, res: Response): Promise<void> => {
   const user = await prisma.user.findUnique({
     where: { id: req.user!.userId },
-    select: { id: true, email: true, displayName: true, avatarUrl: true, status: true },
+    select: {
+      id: true, email: true, displayName: true, avatarUrl: true, status: true,
+      role: true, locationId: true,
+      location: { select: { id: true, name: true } },
+    },
   });
 
   if (!user) {
@@ -22,7 +26,11 @@ userRouter.get('/me', async (req: Request, res: Response): Promise<void> => {
 
 userRouter.get('/', async (_req: Request, res: Response): Promise<void> => {
   const users = await prisma.user.findMany({
-    select: { id: true, email: true, displayName: true, avatarUrl: true, status: true },
+    select: {
+      id: true, email: true, displayName: true, avatarUrl: true, status: true,
+      role: true, locationId: true,
+      location: { select: { id: true, name: true } },
+    },
     orderBy: { displayName: 'asc' },
   });
 

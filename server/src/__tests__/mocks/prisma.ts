@@ -46,6 +46,36 @@ const mockPrisma = {
     findMany: jest.fn(),
     upsert: jest.fn(),
   },
+  shift: {
+    findFirst: jest.fn(),
+    findMany: jest.fn(),
+    create: jest.fn(),
+  },
+  feedPost: {
+    findUnique: jest.fn(),
+    findFirst: jest.fn(),
+    findMany: jest.fn(),
+    create: jest.fn(),
+    delete: jest.fn(),
+  },
+  feedReaction: {
+    findUnique: jest.fn(),
+    findMany: jest.fn(),
+    create: jest.fn(),
+    delete: jest.fn(),
+  },
+  praise: {
+    findMany: jest.fn(),
+    create: jest.fn(),
+  },
+  payPeriod: {
+    findFirst: jest.fn(),
+    findMany: jest.fn(),
+  },
+  location: {
+    findMany: jest.fn(),
+  },
+  $transaction: jest.fn(),
 } as unknown as jest.Mocked<PrismaClient>;
 
 jest.mock('../../lib/prisma', () => ({

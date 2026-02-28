@@ -78,9 +78,9 @@ export function SearchModal({ onClose }: Props) {
   function navigateToResult(result: SearchResult) {
     onClose();
     if (result.channelId) {
-      navigate(`/channels/${result.channelId}`);
+      navigate(`/messages/channels/${result.channelId}`);
     } else if (result.conversationId) {
-      navigate(`/dm/${result.conversationId}`);
+      navigate(`/messages/dm/${result.conversationId}`);
     }
   }
 
@@ -136,7 +136,7 @@ export function SearchModal({ onClose }: Props) {
               key={result.id}
               onClick={() => navigateToResult(result)}
               className={`w-full text-left px-4 py-3 flex gap-3 transition-colors ${
-                i === selectedIndex ? 'bg-indigo-50' : 'hover:bg-gray-50'
+                i === selectedIndex ? 'bg-emerald-50' : 'hover:bg-gray-50'
               } ${i > 0 ? 'border-t border-gray-100' : ''}`}
             >
               <div className="min-w-0 flex-1">

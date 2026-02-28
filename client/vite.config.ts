@@ -11,6 +11,11 @@ export default defineConfig({
       '/channels': 'http://localhost:3001',
       '/messages': 'http://localhost:3001',
       '/conversations': 'http://localhost:3001',
+      '/locations': 'http://localhost:3001',
+      '/shifts': 'http://localhost:3001',
+      '/feed': 'http://localhost:3001',
+      '/praise': 'http://localhost:3001',
+      '/dashboard': 'http://localhost:3001',
       '/socket.io': {
         target: 'http://localhost:3001',
         ws: true,

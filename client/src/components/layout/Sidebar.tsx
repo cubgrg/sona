@@ -31,7 +31,7 @@ export function Sidebar({ onSearchClick, onNavigate }: SidebarProps) {
 
   function handleChannelCreated(id: string) {
     setShowCreateChannel(false);
-    navigate(`/channels/${id}`);
+    navigate(`/messages/channels/${id}`);
     onNavigate?.();
   }
 
@@ -42,24 +42,24 @@ export function Sidebar({ onSearchClick, onNavigate }: SidebarProps) {
 
   return (
     <>
-      <aside className="w-64 h-full bg-indigo-900 text-white flex flex-col shrink-0">
+      <aside className="w-64 h-full bg-emerald-900 text-white flex flex-col shrink-0">
         {/* Header */}
-        <div className="p-4 border-b border-indigo-800">
+        <div className="p-4 border-b border-emerald-800">
           <h1 className="text-lg font-bold">Sona</h1>
-          <p className="text-indigo-300 text-sm truncate">{user?.displayName}</p>
+          <p className="text-emerald-300 text-sm truncate">{user?.displayName}</p>
         </div>
 
         {/* Search */}
         {onSearchClick && (
           <button
             onClick={onSearchClick}
-            className="mx-3 mt-3 flex items-center gap-2 px-3 py-1.5 bg-indigo-800/50 hover:bg-indigo-800 rounded-lg text-sm text-indigo-300 transition-colors"
+            className="mx-3 mt-3 flex items-center gap-2 px-3 py-1.5 bg-emerald-800/50 hover:bg-emerald-800 rounded-lg text-sm text-emerald-300 transition-colors"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             <span className="flex-1 text-left">Search</span>
-            <kbd className="text-xs text-indigo-400 bg-indigo-900/50 px-1.5 py-0.5 rounded">&#8984;K</kbd>
+            <kbd className="text-xs text-emerald-400 bg-emerald-900/50 px-1.5 py-0.5 rounded">&#8984;K</kbd>
           </button>
         )}
 
@@ -67,12 +67,12 @@ export function Sidebar({ onSearchClick, onNavigate }: SidebarProps) {
         <nav className="flex-1 p-3 overflow-y-auto">
           {/* Channels */}
           <div className="flex items-center justify-between px-2 py-1 mb-1">
-            <span className="text-indigo-400 text-xs font-semibold uppercase tracking-wider">
+            <span className="text-emerald-400 text-xs font-semibold uppercase tracking-wider">
               Channels
             </span>
             <button
               onClick={() => setShowCreateChannel(true)}
-              className="text-indigo-400 hover:text-white text-lg leading-none"
+              className="text-emerald-400 hover:text-white text-lg leading-none"
               title="Create channel"
             >
               +
@@ -80,7 +80,7 @@ export function Sidebar({ onSearchClick, onNavigate }: SidebarProps) {
           </div>
 
           {channels.length === 0 && (
-            <p className="text-indigo-300 text-sm px-2 py-1">No channels yet</p>
+            <p className="text-emerald-300 text-sm px-2 py-1">No channels yet</p>
           )}
 
           <ul className="space-y-0.5">
@@ -89,17 +89,17 @@ export function Sidebar({ onSearchClick, onNavigate }: SidebarProps) {
               return (
                 <li key={ch.id}>
                   <button
-                    onClick={() => { navigate(`/channels/${ch.id}`); onNavigate?.(); }}
+                    onClick={() => { navigate(`/messages/channels/${ch.id}`); onNavigate?.(); }}
                     className={`w-full text-left px-2 py-1.5 rounded text-sm transition-colors flex items-center justify-between ${
                       channelId === ch.id
-                        ? 'bg-indigo-800 text-white'
+                        ? 'bg-emerald-800 text-white'
                         : unread > 0
-                          ? 'text-white font-semibold hover:bg-indigo-800/50'
-                          : 'text-indigo-200 hover:bg-indigo-800/50 hover:text-white'
+                          ? 'text-white font-semibold hover:bg-emerald-800/50'
+                          : 'text-emerald-200 hover:bg-emerald-800/50 hover:text-white'
                     }`}
                   >
                     <span>
-                      <span className="text-indigo-400 mr-1">#</span>
+                      <span className="text-emerald-400 mr-1">#</span>
                       {ch.name}
                     </span>
                     {unread > 0 && channelId !== ch.id && (
@@ -115,12 +115,12 @@ export function Sidebar({ onSearchClick, onNavigate }: SidebarProps) {
 
           {/* Direct Messages */}
           <div className="flex items-center justify-between px-2 py-1 mb-1 mt-6">
-            <span className="text-indigo-400 text-xs font-semibold uppercase tracking-wider">
+            <span className="text-emerald-400 text-xs font-semibold uppercase tracking-wider">
               Direct Messages
             </span>
             <button
               onClick={() => setShowNewDM(true)}
-              className="text-indigo-400 hover:text-white text-lg leading-none"
+              className="text-emerald-400 hover:text-white text-lg leading-none"
               title="New message"
             >
               +
@@ -128,7 +128,7 @@ export function Sidebar({ onSearchClick, onNavigate }: SidebarProps) {
           </div>
 
           {conversations.length === 0 && (
-            <p className="text-indigo-300 text-sm px-2 py-1">No conversations yet</p>
+            <p className="text-emerald-300 text-sm px-2 py-1">No conversations yet</p>
           )}
 
           <ul className="space-y-0.5">
@@ -137,20 +137,20 @@ export function Sidebar({ onSearchClick, onNavigate }: SidebarProps) {
               if (!other) return null;
 
               const isActive =
-                conversationId === conv.id || location.pathname === `/dm/${conv.id}`;
+                conversationId === conv.id || location.pathname === `/messages/dm/${conv.id}`;
               const lastMsg = conv.messages?.[0];
               const unread = unreadCounts[conv.id] || 0;
 
               return (
                 <li key={conv.id}>
                   <button
-                    onClick={() => { navigate(`/dm/${conv.id}`); onNavigate?.(); }}
+                    onClick={() => { navigate(`/messages/dm/${conv.id}`); onNavigate?.(); }}
                     className={`w-full text-left px-2 py-1.5 rounded text-sm transition-colors ${
                       isActive
-                        ? 'bg-indigo-800 text-white'
+                        ? 'bg-emerald-800 text-white'
                         : unread > 0
-                          ? 'text-white font-semibold hover:bg-indigo-800/50'
-                          : 'text-indigo-200 hover:bg-indigo-800/50 hover:text-white'
+                          ? 'text-white font-semibold hover:bg-emerald-800/50'
+                          : 'text-emerald-200 hover:bg-emerald-800/50 hover:text-white'
                     }`}
                   >
                     <div className="flex items-center gap-2">
@@ -163,7 +163,7 @@ export function Sidebar({ onSearchClick, onNavigate }: SidebarProps) {
                       )}
                     </div>
                     {lastMsg && (
-                      <p className="text-xs text-indigo-400 truncate mt-0.5 pl-4">
+                      <p className="text-xs text-emerald-400 truncate mt-0.5 pl-4">
                         {lastMsg.content}
                       </p>
                     )}
@@ -175,10 +175,10 @@ export function Sidebar({ onSearchClick, onNavigate }: SidebarProps) {
         </nav>
 
         {/* Footer */}
-        <div className="p-3 border-t border-indigo-800">
+        <div className="p-3 border-t border-emerald-800">
           <button
             onClick={logout}
-            className="w-full text-left text-indigo-300 hover:text-white text-sm px-2 py-1 rounded hover:bg-indigo-800 transition-colors"
+            className="w-full text-left text-emerald-300 hover:text-white text-sm px-2 py-1 rounded hover:bg-emerald-800 transition-colors"
           >
             Sign out
           </button>

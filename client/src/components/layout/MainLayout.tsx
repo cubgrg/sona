@@ -1,12 +1,11 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route, useParams, useLocation } from 'react-router-dom';
 import { useAuthStore } from '../../stores/authStore';
 import { useUnreadStore } from '../../stores/unreadStore';
-import { connectSocket, disconnectSocket, getSocket } from '../../services/socket';
+import { getSocket } from '../../services/socket';
 import { Sidebar } from './Sidebar';
 import { ChannelView } from '../channels/ChannelView';
 import { ConversationView } from '../dm/ConversationView';
-import { SearchModal } from '../common/SearchModal';
 import type { Message } from '../../types';
 
 function UnreadTracker() {
@@ -40,8 +39,6 @@ function UnreadTracker() {
 }
 
 export function MainLayout() {
-  const { isAuthenticated, loadUser } = useAuthStore();
-  const [showSearch, setShowSearch] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
 
@@ -50,35 +47,8 @@ export function MainLayout() {
     setSidebarOpen(false);
   }, [location.pathname]);
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      loadUser();
-      const token = localStorage.getItem('accessToken');
-      if (token) {
-        connectSocket(token);
-      }
-    }
-
-    return () => {
-      disconnectSocket();
-    };
-  }, [isAuthenticated, loadUser]);
-
-  // Cmd+K / Ctrl+K to open search
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-      e.preventDefault();
-      setShowSearch((prev) => !prev);
-    }
-  }, []);
-
-  useEffect(() => {
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [handleKeyDown]);
-
   return (
-    <div className="h-screen flex bg-gray-100">
+    <div className="h-full flex bg-gray-100">
       {/* Mobile sidebar overlay */}
       {sidebarOpen && (
         <div
@@ -93,12 +63,9 @@ export function MainLayout() {
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
       `}>
         <Sidebar
-          onSearchClick={() => { setShowSearch(true); setSidebarOpen(false); }}
           onNavigate={() => setSidebarOpen(false)}
         />
       </div>
-
-      {showSearch && <SearchModal onClose={() => setShowSearch(false)} />}
 
       {/* Main content area */}
       <div className="flex-1 flex flex-col min-w-0">
@@ -112,15 +79,7 @@ export function MainLayout() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <span className="ml-2 font-semibold text-gray-900">Sona</span>
-          <button
-            onClick={() => setShowSearch(true)}
-            className="ml-auto p-1.5 text-gray-400 hover:text-gray-600"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </button>
+          <span className="ml-2 font-semibold text-gray-900">Messages</span>
         </div>
 
         <Routes>

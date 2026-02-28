@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { LoginForm } from './components/auth/LoginForm';
 import { RegisterForm } from './components/auth/RegisterForm';
-import { MainLayout } from './components/layout/MainLayout';
+import { AppShell } from './components/layout/AppShell';
 import { useAuthStore } from './stores/authStore';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -11,7 +11,7 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
 
 function GuestRoute({ children }: { children: React.ReactNode }) {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
-  return isAuthenticated ? <Navigate to="/" replace /> : <>{children}</>;
+  return isAuthenticated ? <Navigate to="/home" replace /> : <>{children}</>;
 }
 
 export default function App() {
@@ -20,7 +20,7 @@ export default function App() {
       <Routes>
         <Route path="/login" element={<GuestRoute><LoginForm /></GuestRoute>} />
         <Route path="/register" element={<GuestRoute><RegisterForm /></GuestRoute>} />
-        <Route path="/*" element={<ProtectedRoute><MainLayout /></ProtectedRoute>} />
+        <Route path="/*" element={<ProtectedRoute><AppShell /></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   );

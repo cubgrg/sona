@@ -72,7 +72,7 @@ export function MessageItem({ message, isOwnMessage, showThreadButton = true }: 
   return (
     <div className={`group flex gap-3 px-4 py-1.5 hover:bg-gray-50 ${isOwnMessage ? '' : ''}`}>
       {/* Avatar */}
-      <div className="w-9 h-9 rounded-full bg-indigo-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+      <div className="w-9 h-9 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
         {message.author.avatarUrl ? (
           <img src={message.author.avatarUrl} alt="" className="w-full h-full rounded-full" />
         ) : (
@@ -95,7 +95,7 @@ export function MessageItem({ message, isOwnMessage, showThreadButton = true }: 
             <div className="relative" ref={pickerRef}>
               <button
                 onClick={() => setShowPicker(!showPicker)}
-                className="text-xs text-gray-400 hover:text-indigo-600 px-1"
+                className="text-xs text-gray-400 hover:text-emerald-600 px-1"
                 title="Add reaction"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -119,7 +119,7 @@ export function MessageItem({ message, isOwnMessage, showThreadButton = true }: 
             {showThreadButton && (
               <button
                 onClick={() => openThread(message.id)}
-                className="text-xs text-gray-400 hover:text-indigo-600"
+                className="text-xs text-gray-400 hover:text-emerald-600"
               >
                 Reply
               </button>
@@ -142,7 +142,7 @@ export function MessageItem({ message, isOwnMessage, showThreadButton = true }: 
                   title={g.userNames.join(', ')}
                   className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs border transition-colors ${
                     hasReacted
-                      ? 'bg-indigo-50 border-indigo-300 text-indigo-700'
+                      ? 'bg-emerald-50 border-emerald-300 text-emerald-700'
                       : 'bg-gray-50 border-gray-200 text-gray-600 hover:bg-gray-100'
                   }`}
                 >
@@ -164,7 +164,7 @@ export function MessageItem({ message, isOwnMessage, showThreadButton = true }: 
         {showThreadButton && replyCount > 0 && (
           <button
             onClick={() => openThread(message.id)}
-            className="mt-1 text-xs text-indigo-600 hover:text-indigo-800 font-medium"
+            className="mt-1 text-xs text-emerald-600 hover:text-emerald-800 font-medium"
           >
             {replyCount} {replyCount === 1 ? 'reply' : 'replies'}
           </button>

@@ -57,6 +57,15 @@ export function registerSocketHandlers(io: Server) {
     // Join user's private room (for DMs and notifications)
     socket.join(`user:${userId}`);
 
+    // Join location room for scoped feed posts
+    const userData = await prisma.user.findUnique({
+      where: { id: userId },
+      select: { locationId: true },
+    });
+    if (userData?.locationId) {
+      socket.join(`location:${userData.locationId}`);
+    }
+
     // Broadcast online status to everyone
     io.emit('user:presence', { userId, status: 'online' });
 
@@ -215,6 +224,34 @@ export function registerSocketHandlers(io: Server) {
         channelId: data.channelId,
         conversationId: data.conversationId,
       });
+    });
+
+    // Toggle reaction on a feed post
+    socket.on('feed:reaction_toggle', async (data: { feedPostId: string; emoji: string }) => {
+      const existing = await prisma.feedReaction.findUnique({
+        where: {
+          userId_feedPostId_emoji: {
+            userId,
+            feedPostId: data.feedPostId,
+            emoji: data.emoji,
+          },
+        },
+      });
+
+      if (existing) {
+        await prisma.feedReaction.delete({ where: { id: existing.id } });
+      } else {
+        await prisma.feedReaction.create({
+          data: { userId, feedPostId: data.feedPostId, emoji: data.emoji },
+        });
+      }
+
+      const reactions = await prisma.feedReaction.findMany({
+        where: { feedPostId: data.feedPostId },
+        include: { user: { select: { id: true, displayName: true } } },
+      });
+
+      io.emit('feed:reaction_update', { feedPostId: data.feedPostId, reactions });
     });
 
     // Disconnect

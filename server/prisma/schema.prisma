@@ -14,15 +14,25 @@ model User {
   displayName  String   @map("display_name")
   avatarUrl    String?  @map("avatar_url")
   status       String   @default("offline")
+  locationId   String?  @map("location_id")
+  role         String   @default("team_member")
   createdAt    DateTime @default(now()) @map("created_at")
   updatedAt    DateTime @updatedAt @map("updated_at")
 
+  location       Location?      @relation(fields: [locationId], references: [id], onDelete: SetNull)
   messages       Message[]
   channelMembers ChannelMember[]
   conversationMembers ConversationMember[]
   channelsCreated Channel[] @relation("ChannelCreator")
   readReceipts   ReadReceipt[]
   reactions      Reaction[]
+  shifts         Shift[]
+  feedPosts      FeedPost[]
+  feedReactions  FeedReaction[]
+  praiseGiven    Praise[]       @relation("PraiseGiven")
+  praiseReceived Praise[]       @relation("PraiseReceived")
+  hourlyRate     Float?         @map("hourly_rate")
+  payPeriods     PayPeriod[]
 
   @@map("users")
 }
@@ -130,4 +140,102 @@ model ReadReceipt {
   @@unique([userId, channelId])
   @@unique([userId, conversationId])
   @@map("read_receipts")
+}
+
+model Location {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  address   String?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  users     User[]
+  shifts    Shift[]
+
+  @@map("locations")
+}
+
+model Shift {
+  id         String   @id @default(uuid())
+  employeeId String   @map("employee_id")
+  locationId String   @map("location_id")
+  date       DateTime @db.Date
+  startTime  String   @map("start_time")
+  endTime    String   @map("end_time")
+  role       String
+  notes      String?
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  employee User     @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  location Location @relation(fields: [locationId], references: [id], onDelete: Cascade)
+
+  @@map("shifts")
+}
+
+model FeedPost {
+  id            String   @id @default(uuid())
+  authorId      String   @map("author_id")
+  type          String   @default("announcement")
+  title         String?
+  content       String
+  imageUrl      String?  @map("image_url")
+  locationScope String   @default("all") @map("location_scope")
+  isPinned      Boolean  @default(false) @map("is_pinned")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  author    User           @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  reactions FeedReaction[]
+  praise    Praise?
+
+  @@map("feed_posts")
+}
+
+model FeedReaction {
+  id         String   @id @default(uuid())
+  emoji      String
+  userId     String   @map("user_id")
+  feedPostId String   @map("feed_post_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  feedPost FeedPost @relation(fields: [feedPostId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, feedPostId, emoji])
+  @@map("feed_reactions")
+}
+
+model Praise {
+  id         String   @id @default(uuid())
+  fromUserId String   @map("from_user_id")
+  toUserId   String   @map("to_user_id")
+  message    String
+  category   String?
+  feedPostId String?  @unique @map("feed_post_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  fromUser User      @relation("PraiseGiven", fields: [fromUserId], references: [id], onDelete: Cascade)
+  toUser   User      @relation("PraiseReceived", fields: [toUserId], references: [id], onDelete: Cascade)
+  feedPost FeedPost? @relation(fields: [feedPostId], references: [id], onDelete: SetNull)
+
+  @@map("praises")
+}
+
+model PayPeriod {
+  id          String   @id @default(uuid())
+  employeeId  String   @map("employee_id")
+  startDate   DateTime @map("start_date") @db.Date
+  endDate     DateTime @map("end_date") @db.Date
+  payDate     DateTime @map("pay_date") @db.Date
+  hoursWorked Float    @map("hours_worked")
+  hourlyRate  Float    @map("hourly_rate")
+  grossPay    Float    @map("gross_pay")
+  netPay      Float    @map("net_pay")
+  status      String   @default("pending")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  employee User @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  @@map("pay_periods")
 }

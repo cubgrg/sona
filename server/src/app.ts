@@ -5,6 +5,11 @@ import { userRouter } from './routes/users';
 import { channelRouter } from './routes/channels';
 import { messageRouter } from './routes/messages';
 import { conversationRouter } from './routes/conversations';
+import { locationRouter } from './routes/locations';
+import { shiftRouter } from './routes/shifts';
+import { feedRouter } from './routes/feed';
+import { praiseRouter } from './routes/praise';
+import { dashboardRouter } from './routes/dashboard';
 import { errorHandler } from './middleware/errorHandler';
 
 const app = express();
@@ -22,6 +27,11 @@ app.use('/auth', authRouter);
 app.use('/users', userRouter);
 app.use('/channels', channelRouter);
 app.use('/conversations', conversationRouter);
+app.use('/locations', locationRouter);
+app.use('/shifts', shiftRouter);
+app.use('/feed', feedRouter);
+app.use('/praise', praiseRouter);
+app.use('/dashboard', dashboardRouter);
 app.use('/', messageRouter);
 
 // Error handler

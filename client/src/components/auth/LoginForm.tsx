@@ -12,7 +12,7 @@ export function LoginForm() {
     e.preventDefault();
     try {
       await login(email, password);
-      navigate('/');
+      navigate('/home');
     } catch {
       // error is set in store
     }
@@ -40,7 +40,7 @@ export function LoginForm() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
               placeholder="you@team.com"
             />
           </div>
@@ -53,7 +53,7 @@ export function LoginForm() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
               placeholder="Enter your password"
             />
           </div>
@@ -61,7 +61,7 @@ export function LoginForm() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-2.5 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 disabled:opacity-50 transition-colors"
+            className="w-full py-2.5 bg-emerald-600 text-white font-medium rounded-lg hover:bg-emerald-700 disabled:opacity-50 transition-colors"
           >
             {isLoading ? 'Signing in...' : 'Sign in'}
           </button>
@@ -69,7 +69,7 @@ export function LoginForm() {
 
         <p className="mt-6 text-center text-sm text-gray-500">
           Don't have an account?{' '}
-          <Link to="/register" className="text-indigo-600 hover:text-indigo-700 font-medium">
+          <Link to="/register" className="text-emerald-600 hover:text-emerald-700 font-medium">
             Sign up
           </Link>
         </p>

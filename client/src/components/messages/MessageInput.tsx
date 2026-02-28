@@ -49,7 +49,7 @@ export function MessageInput({ channelName, onSend, channelId, conversationId }:
 
   return (
     <div className="px-4 pb-4">
-      <div className="border border-gray-300 rounded-lg focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-transparent">
+      <div className="border border-gray-300 rounded-lg focus-within:ring-2 focus-within:ring-emerald-500 focus-within:border-transparent">
         <textarea
           value={content}
           onChange={handleChange}
