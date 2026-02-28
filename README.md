@@ -139,20 +139,13 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ### Test Accounts (from seed data)
 
-All passwords are `password123`.
+All passwords are `password123`. The seed includes 10 employees across 3 locations — here are a few to get started:
 
 | Name | Email | Role | Location |
 |---|---|---|---|
 | Maria Santos | maria@goldenfork.com | Manager | Downtown |
-| James Chen | james@goldenfork.com | Chef | Downtown |
-| Sophie Williams | sophie@goldenfork.com | Server | Downtown |
-| Kai Nakamura | kai@goldenfork.com | Bartender | Downtown |
+| Sophie Williams | test123@goldenfork.com | Server | Downtown |
 | Priya Patel | priya@goldenfork.com | Manager | Waterfront |
-| Tom O'Brien | tom@goldenfork.com | Chef | Waterfront |
-| Aisha Mohammed | aisha@goldenfork.com | Server | Waterfront |
-| Luca Rossi | luca@goldenfork.com | Kitchen Staff | Waterfront |
-| Emma Davis | emma@goldenfork.com | Host | Midtown |
-| Ryan Kim | ryan@goldenfork.com | Server | Midtown |
 
 ## Scripts
 
