@@ -10,6 +10,7 @@ import { shiftRouter } from './routes/shifts';
 import { feedRouter } from './routes/feed';
 import { praiseRouter } from './routes/praise';
 import { dashboardRouter } from './routes/dashboard';
+import { payrollChatRouter } from './routes/payrollChat';
 import { errorHandler } from './middleware/errorHandler';
 
 const app = express();
@@ -32,6 +33,7 @@ app.use('/shifts', shiftRouter);
 app.use('/feed', feedRouter);
 app.use('/praise', praiseRouter);
 app.use('/dashboard', dashboardRouter);
+app.use('/payroll', payrollChatRouter);
 app.use('/', messageRouter);
 
 // Error handler

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDashboardStore } from '../../stores/dashboardStore';
 import api from '../../services/api';
 import type { Shift, UnreadChannel, FeedPost, PayPeriod } from '../../types';
+import { PayrollBotModal } from './PayrollBotModal';
 
 function getGreeting() {
   const hour = new Date().getHours();
@@ -69,7 +70,7 @@ function NextShiftCard({ shift }: { shift: Shift | null }) {
   );
 }
 
-function PayDayCard({ payPeriod }: { payPeriod: PayPeriod | null }) {
+function PayDayCard({ payPeriod, onChatOpen }: { payPeriod: PayPeriod | null; onChatOpen: () => void }) {
   if (!payPeriod) return null;
 
   const payDate = new Date(payPeriod.payDate);
@@ -94,6 +95,12 @@ function PayDayCard({ payPeriod }: { payPeriod: PayPeriod | null }) {
         <span>·</span>
         <span>${payPeriod.hourlyRate}/hr</span>
       </div>
+      <button
+        onClick={onChatOpen}
+        className="mt-3 text-sm text-emerald-100 hover:text-white flex items-center gap-1 transition-colors"
+      >
+        💬 Speak to your payroll specialist
+      </button>
     </div>
   );
 }
@@ -294,6 +301,7 @@ function MiniFeed() {
 
 export function HomeDashboard() {
   const { data, isLoading, fetchDashboard } = useDashboardStore();
+  const [botOpen, setBotOpen] = useState(false);
 
   useEffect(() => {
     fetchDashboard();
@@ -310,30 +318,34 @@ export function HomeDashboard() {
   if (!data) return null;
 
   return (
-    <div className="flex-1 overflow-y-auto bg-gray-50">
-      <div className="max-w-lg mx-auto px-4 py-6 space-y-4">
-        {/* Greeting */}
-        <div className="mb-2">
-          <h1 className="text-2xl font-bold text-gray-900">
-            {getGreeting()}, {data.user.displayName.split(' ')[0]}!
-          </h1>
-          <div className="flex items-center gap-2 mt-1">
-            <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${roleBadgeColor(data.user.role)}`}>
-              {formatRole(data.user.role)}
-            </span>
-            {data.user.location && (
-              <span className="text-xs text-gray-400">{data.user.location.name}</span>
-            )}
+    <>
+      <div className="flex-1 overflow-y-auto bg-gray-50">
+        <div className="max-w-lg mx-auto px-4 py-6 space-y-4">
+          {/* Greeting */}
+          <div className="mb-2">
+            <h1 className="text-2xl font-bold text-gray-900">
+              {getGreeting()}, {data.user.displayName.split(' ')[0]}!
+            </h1>
+            <div className="flex items-center gap-2 mt-1">
+              <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${roleBadgeColor(data.user.role)}`}>
+                {formatRole(data.user.role)}
+              </span>
+              {data.user.location && (
+                <span className="text-xs text-gray-400">{data.user.location.name}</span>
+              )}
+            </div>
           </div>
-        </div>
 
-        <NextShiftCard shift={data.nextShift} />
-        <PayDayCard payPeriod={data.nextPay} />
-        <WeekGlance shifts={data.weekShifts} />
-        <MiniFeed />
-        <UnreadSummary channels={data.unreadSummary.channels} totalUnread={data.unreadSummary.totalUnread} />
-        <RecentPraise praise={data.recentPraise} />
+          <NextShiftCard shift={data.nextShift} />
+          <PayDayCard payPeriod={data.nextPay} onChatOpen={() => setBotOpen(true)} />
+          <WeekGlance shifts={data.weekShifts} />
+          <MiniFeed />
+          <UnreadSummary channels={data.unreadSummary.channels} totalUnread={data.unreadSummary.totalUnread} />
+          <RecentPraise praise={data.recentPraise} />
+        </div>
       </div>
-    </div>
+
+      {botOpen && <PayrollBotModal onClose={() => setBotOpen(false)} />}
+    </>
   );
 }

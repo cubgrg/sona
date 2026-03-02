@@ -16,6 +16,7 @@ export default defineConfig({
       '/feed': 'http://localhost:3001',
       '/praise': 'http://localhost:3001',
       '/dashboard': 'http://localhost:3001',
+      '/payroll': 'http://localhost:3001',
       '/socket.io': {
         target: 'http://localhost:3001',
         ws: true,

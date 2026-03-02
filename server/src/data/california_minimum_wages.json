@@ -1,0 +1,776 @@
+[
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_min_wage",
+    "local": "STATE",
+    "description": "ALL",
+    "external_links": [],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$16.00" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$16.50" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$16.90" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_fast_food_min_wage",
+    "local": "STATE",
+    "description": "FAST FOOD",
+    "external_links": ["@California - Minimum Wage - Fast Food"],
+    "rates": [
+      { "effective_date": "2024-04-01", "minimum_wage": "$20.00", "note": "no increase Apr25" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": null,
+    "local": "STATE",
+    "description": "HEALTH CARE",
+    "external_links": [],
+    "rates": []
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_alameda_min_wage",
+    "local": "Alameda (city)",
+    "description": "All",
+    "external_links": ["https://www.alamedaca.gov/D"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$17.00" },
+      { "effective_date": "2025-07-01", "minimum_wage": "$17.46" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_belmont_min_wage",
+    "local": "Belmont (city)",
+    "description": "All",
+    "external_links": ["https://www.belmont.gov"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.35" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$18.30" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$18.95" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_berkeley_min_wage",
+    "local": "Berkeley (city)",
+    "description": "All",
+    "external_links": ["City of Berkeley Workforce Standards and Enforcement"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$18.67" },
+      { "effective_date": "2025-07-01", "minimum_wage": "$19.18" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_burlingame_min_wage",
+    "local": "Burlingame (city)",
+    "description": "All",
+    "external_links": ["Minimum Wage Information | Burlingame, CA"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.03" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.43" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.86" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_cupertino_min_wage",
+    "local": "Cupertino (city)",
+    "description": "All",
+    "external_links": ["https://www.cupertino.org"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.75" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$18.20" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$18.70" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_daly_city_min_wage",
+    "local": "Daly City (city)",
+    "description": "All",
+    "external_links": ["Minimum Wage | Daly City, CA"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$16.62" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.07" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.50" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_east_palo_alto_min_wage",
+    "local": "East Palo Alto (city)",
+    "description": "All",
+    "external_links": ["City of East Palo Alto Local Minimum Wage"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.00" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.45" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.90" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_el_cerrito_min_wage",
+    "local": "El Cerrito (city)",
+    "description": "All",
+    "external_links": ["The El Cerrito minimum wage is different than the California..."],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.92" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$18.34" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$18.82" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_emeryville_min_wage",
+    "local": "Emeryville (city)",
+    "description": "All",
+    "external_links": ["https://www.ci.emeryville.ca.us"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$19.36" },
+      { "effective_date": "2025-07-01", "minimum_wage": "$19.90" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_fremont_min_wage",
+    "local": "Fremont (city)",
+    "description": "All",
+    "external_links": ["www.fremont.gov"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$17.30" },
+      { "effective_date": "2025-07-01", "minimum_wage": "$17.75" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_foster_min_wage",
+    "local": "Foster City (city)",
+    "description": "All",
+    "external_links": ["City of Foster City Minimum Wage Ordinance | Foster City Cal..."],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.00" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.39" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.85" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_glendale_hotel_min_wage",
+    "local": "Glendale (city)",
+    "description": "HOTELS 60 or more rooms",
+    "external_links": ["www.glendaleca.gov"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$20.32" },
+      { "effective_date": "2025-07-01", "minimum_wage": "$22.50" },
+      { "effective_date": "2026-07-01", "minimum_wage": "$25.00" },
+      { "effective_date": "2027-07-01", "minimum_wage": "$27.50" },
+      { "effective_date": "2028-07-01", "minimum_wage": "$30.00" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_half_moon_bay_min_wage",
+    "local": "Half Moon Bay (city)",
+    "description": "All",
+    "external_links": ["https://www.half-moon-bay.ca.us"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.01" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.47" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.91" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_hayward-min_wage",
+    "local": "Hayward (city)",
+    "description": "Large 26+ employees",
+    "external_links": ["http://www.hayward-ca.gov"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$16.90" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.36" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.79" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_hayward-min_wage",
+    "local": "Hayward (city)",
+    "description": "Small 1-25 employees",
+    "external_links": ["http://www.hayward-ca.gov"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$16.00" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$16.50" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$16.90" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_long_beach_hotel_min_wage",
+    "local": "Long Beach (city)",
+    "description": "Hotels 100 or more rooms",
+    "external_links": ["Minimum Wage Long Beach Hotel Workers", "Brightmine - Long Beach Hotel info"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$23.00" },
+      { "effective_date": "2025-07-01", "minimum_wage": "$25.00" },
+      { "effective_date": "2026-07-01", "minimum_wage": "$26.50" },
+      { "effective_date": "2027-07-01", "minimum_wage": "$28.00" },
+      { "effective_date": "2028-07-01", "minimum_wage": "$29.50" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_long_beach_airport_min_wage",
+    "local": "Long Beach (city)",
+    "description": "Concessionaire Worker (Airport and Long Beach Convention Center)",
+    "external_links": ["www.longbeach.gov", "@Minimum Wage Rules - Airports"],
+    "rates": [
+      { "effective_date": "2025-07-01", "minimum_wage": "$25.00" },
+      { "effective_date": "2026-07-01", "minimum_wage": "$26.50" },
+      { "effective_date": "2027-07-01", "minimum_wage": "$28.00" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_los_altos_min_wage",
+    "local": "Los Altos (city)",
+    "description": "All",
+    "external_links": ["https://www.losaltosca.gov"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.75" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$18.20" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$18.70" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_la_city_min_wage",
+    "local": "Los Angeles (city)",
+    "description": "All",
+    "external_links": ["Office of Wage Standards | Wages LA"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$17.28" },
+      { "effective_date": "2025-07-01", "minimum_wage": "$17.87" },
+      { "effective_date": "2026-07-01", "minimum_wage": "$18.42" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_los_angeles_county_min_wage",
+    "local": "Los Angeles County (Unincorporated county)",
+    "description": "All",
+    "external_links": ["WPPRO Administrator Minimum Wage for Businesses"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$17.27" },
+      { "effective_date": "2025-07-01", "minimum_wage": "$17.81" },
+      { "effective_date": "2026-07-01", "minimum_wage": "$18.47" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_los_angeles_hotel_min_wage",
+    "local": "Los Angeles (city)",
+    "description": "HOTELS - 60 or more rooms (all operations in the hotel)",
+    "external_links": ["wagesla21.cityofla.acsitefactory.com"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$20.32" },
+      { "effective_date": "2025-09-08", "minimum_wage": "$22.50" },
+      { "effective_date": "2026-07-01", "minimum_wage": "$25.00" },
+      { "effective_date": "2027-07-01", "minimum_wage": "$27.50" },
+      { "effective_date": "2028-07-01", "minimum_wage": "$30.00" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": null,
+    "local": "Los Angeles (city)",
+    "description": "AIRPORT LAX",
+    "external_links": ["LAWA Official Site | Living Wage and Service Worker Retention...", "@Minimum Wage Rules - Airports"],
+    "rates": []
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_malibu_min_wage",
+    "local": "Malibu (city)",
+    "description": "All",
+    "external_links": ["Minimum Wage | Malibu, CA - Official Website", "www.malibucity.org"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$17.27" },
+      { "effective_date": "2025-07-01", "minimum_wage": "$17.27", "note": "no change" },
+      { "effective_date": "2026-07-01", "minimum_wage": "$17.91" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_menlo_park_min_wage",
+    "local": "Menlo Park (city)",
+    "description": "All",
+    "external_links": ["menlopark.gov"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$16.70" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.10" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.55" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_milpitas_min_wage",
+    "local": "Milpitas (city)",
+    "description": "All",
+    "external_links": ["Minimum Wage | Milpitas, CA"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$17.70" },
+      { "effective_date": "2025-07-01", "minimum_wage": "$18.20" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_mountain_view_min_wage",
+    "local": "Mountain View (city)",
+    "description": "All",
+    "external_links": ["econdev.mountainview.gov"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$18.75" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$19.20" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$19.70" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_novato_min_wage",
+    "local": "Novato (city)",
+    "description": "Very Large - 100+ employees",
+    "external_links": ["www.novato.org"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$16.86" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.27" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.73" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_novato_min_wage",
+    "local": "Novato (city)",
+    "description": "Large - 26-99 employees",
+    "external_links": ["www.novato.org"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$16.60" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.00" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.46" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_novato_min_wage",
+    "local": "Novato (city)",
+    "description": "Small - up to 25 employees",
+    "external_links": ["www.novato.org"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$16.04" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$16.42", "note": "STATE RATE $16.50" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$16.90", "note": "state rate" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_oakland_min_wage",
+    "local": "Oakland (city)",
+    "description": "All",
+    "external_links": ["Oakland, CA Minimum Wage"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$16.50" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$16.89" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.34" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "oakland_hotels_min_wage",
+    "local": "Oakland (city)",
+    "description": "Hotels with 50+ rooms - WITH Health Benefits",
+    "external_links": ["Oakland, CA Minimum Wage"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.94" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$18.36" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$18.85" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "oakland_hotels_min_wage",
+    "local": "Oakland (city)",
+    "description": "Hotels with 50+ rooms - WITHOUT Health Benefits",
+    "external_links": ["Oakland, CA Minimum Wage"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$23.91" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$24.48" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$25.14" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_palo_alto_min-wage",
+    "local": "Palo Alto (city)",
+    "description": "All",
+    "external_links": ["www.cityofpaloalto.org"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.80" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$18.20" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$18.70" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_pasadena_min_wage",
+    "local": "Pasadena (city)",
+    "description": "All",
+    "external_links": ["https://www.cityofpasadena.net"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$17.50" },
+      { "effective_date": "2025-07-01", "minimum_wage": "$18.04" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_petaluma_min_wage",
+    "local": "Petaluma (city)",
+    "description": "All",
+    "external_links": ["Petaluma Minimum Wage - City of Petaluma"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.45" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.97" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$18.31" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_redwood_city_min_wage",
+    "local": "Redwood City (city)",
+    "description": "All",
+    "external_links": ["www.redwoodcity.org"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.70" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$18.20" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$18.65" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_richmond_min_wage",
+    "local": "Richmond (city)",
+    "description": "With $1.50 per hour toward Health Benefit",
+    "external_links": ["Richmond's Minimum Wage Ordinance | Richmond, CA - Official..."],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$15.70", "note": "below CA rate of $16.00" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$16.27", "note": "below CA rate of $16.50" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.68", "note": "with $1.50 toward health benefit" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_richmond_min_wage",
+    "local": "Richmond (city)",
+    "description": "Without Health Benefit",
+    "external_links": ["Richmond's Minimum Wage Ordinance | Richmond, CA - Official..."],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.20" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.77" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$19.18" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_san_carlos_min_wage",
+    "local": "San Carlos (city)",
+    "description": "All",
+    "external_links": ["San Carlos, CA"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$16.87" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.32" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.75" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_san_diego_min_wage",
+    "local": "San Diego (city)",
+    "description": "All",
+    "external_links": ["Earned Sick Leave and Minimum Wage Ordinance | City of San D..."],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$16.85" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.25" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.75" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "san_diego_hotel_min_wage",
+    "local": "San Diego (city)",
+    "description": "Hotels & Amusement Parks",
+    "detail_rule_codes": ["san_diego_hotel_min_wage", "san_diego_amusement_min_wage"],
+    "external_links": ["Lauren R. Presser City of San Diego Increases Hospitality Minimum Wage"],
+    "rates": [
+      { "effective_date": "2026-07-01", "minimum_wage": "$19.00", "note": "NEW IN 2026" },
+      { "effective_date": "2027-07-01", "minimum_wage": "$20.50" },
+      { "effective_date": "2028-07-01", "minimum_wage": "$22.00" },
+      { "effective_date": "2029-07-01", "minimum_wage": "$23.50" },
+      { "effective_date": "2030-07-01", "minimum_wage": "$25.00" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "san_diego_event_min_wage",
+    "local": "San Diego (city)",
+    "description": "Event Centers",
+    "external_links": ["Lauren R. Presser City of San Diego Increases Hospitality Minimum Wage"],
+    "rates": [
+      { "effective_date": "2026-07-01", "minimum_wage": "$21.06", "note": "NEW IN 2026" },
+      { "effective_date": "2027-07-01", "minimum_wage": "$22.00" },
+      { "effective_date": "2028-07-01", "minimum_wage": "$23.00" },
+      { "effective_date": "2029-07-01", "minimum_wage": "$24.00" },
+      { "effective_date": "2030-07-01", "minimum_wage": "$25.00" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "san_francisco_min_wage",
+    "local": "San Francisco (city)",
+    "description": "All",
+    "external_links": ["https://www.sf.gov"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$18.67" },
+      { "effective_date": "2025-07-01", "minimum_wage": "$19.18" },
+      { "effective_date": "2026-07-01", "minimum_wage": "$19.61" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_san_jose_min_wage",
+    "local": "San Jose (city)",
+    "description": "All",
+    "external_links": ["www.sanjoseca.gov"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.55" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.95" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$18.45" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": null,
+    "local": "San Jose (AIRPORT)",
+    "description": "AIRPORT",
+    "external_links": ["www.flysanjose.com"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage_without_benefits": "$20.80", "minimum_wage_with_qualified_benefits": "$19.55" },
+      { "effective_date": "2025-07-01", "minimum_wage_without_benefits": "$21.34", "minimum_wage_with_qualified_benefits": "$20.09" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_san_mateo_min_wage",
+    "local": "San Mateo (city)",
+    "description": "All",
+    "external_links": ["City of San Mateo Minimum Wage Ordinance | San Mateo, CA - O..."],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.35" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.95" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$18.60" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_san_mateo_county_min_wage",
+    "local": "San Mateo (county)",
+    "description": "COUNTY - Unincorporated Areas",
+    "external_links": ["County of San Mateo, CA Minimum Wage Increase for Unincorporated Areas"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.06" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.46" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.95" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_santa_clara_min_wage",
+    "local": "Santa Clara (city)",
+    "description": "All",
+    "external_links": ["www.santaclaraca.gov"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.75" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$18.20" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$18.70" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_santa_monica_min_wage",
+    "local": "Santa Monica (city)",
+    "description": "All",
+    "external_links": ["Minimum Wage"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$17.27" },
+      { "effective_date": "2025-07-01", "minimum_wage": "$17.81" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_santa_monica_hotel_min_wage",
+    "local": "Santa Monica (HOTEL)",
+    "description": "ALL hotel employees",
+    "external_links": ["Minimum Wage"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$20.32" },
+      { "effective_date": "2025-09-08", "minimum_wage": "$22.50", "note": "or same as LA Hotels" },
+      { "effective_date": "2026-07-01", "minimum_wage": "$25.00" },
+      { "effective_date": "2027-07-01", "minimum_wage": "$27.50" },
+      { "effective_date": "2028-07-01", "minimum_wage": "$30.00" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_santa_rosa_min_wage",
+    "local": "Santa Rosa (city)",
+    "description": "All",
+    "external_links": ["https://www.srcity.org"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.45" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.87" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$18.21" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_sanoma_min_wage",
+    "local": "Sonoma (city)",
+    "description": "26+ employees",
+    "external_links": ["https://www.sonomacity.org/wages/"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.60" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$18.02" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$18.47" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_sanoma_min_wage",
+    "local": "Sonoma (city)",
+    "description": "up to 25 employees",
+    "external_links": ["https://www.sonomacity.org/wages/"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$16.56" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$16.96" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$17.38" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_south_san_francisco",
+    "local": "South San Francisco (city)",
+    "description": "All",
+    "external_links": ["South San Francisco Minimum Wage"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$17.25" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$17.70" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$18.15" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_sunnyvale_min_wage",
+    "local": "Sunnyvale (city)",
+    "description": "All",
+    "external_links": ["www.sunnyvale.ca.gov"],
+    "rates": [
+      { "effective_date": "2024-01-01", "minimum_wage": "$18.55" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$19.00" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$19.50" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_wast_hollywood_min_wage",
+    "local": "West Hollywood (city)",
+    "description": "All",
+    "external_links": ["www.weho.org"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$19.08" },
+      { "effective_date": "2025-01-01", "minimum_wage": "$19.65" },
+      { "effective_date": "2026-01-01", "minimum_wage": "$20.25" }
+    ]
+  },
+  {
+    "state": "California",
+    "code": "CA",
+    "rule_code": "ca_west_hollywood_hotel_min_wage",
+    "local": "West Hollywood (HOTEL)",
+    "description": "All",
+    "external_links": ["www.weho.org"],
+    "rates": [
+      { "effective_date": "2024-07-01", "minimum_wage": "$19.61" },
+      { "effective_date": "2025-07-01", "minimum_wage": "$20.22" }
+    ]
+  }
+]
